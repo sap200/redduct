@@ -30,13 +30,6 @@ npm run serve
 
 The frontend app is built using the `@starport/vue` and `@starport/vuex` packages. For details, see the [monorepo for Starport front-end development](https://github.com/tendermint/vue).
 
-## Learn more
-
-- [Starport](https://github.com/tendermint/starport)
-- [Starport Docs](https://docs.starport.network)
-- [Cosmos SDK documentation](https://docs.cosmos.network)
-- [Cosmos SDK Tutorials](https://tutorials.cosmos.network)
-- [Discord](https://discord.gg/W8trcGV)
 
 ## Usage
 
@@ -150,6 +143,13 @@ redductd tx redduct create-order -h
 
 Try to make a decentralized ecommerce app as made in vue using the protocol...
 
+## Learn more
+
+- [Starport](https://github.com/tendermint/starport)
+- [Starport Docs](https://docs.starport.network)
+- [Cosmos SDK documentation](https://docs.cosmos.network)
+- [Cosmos SDK Tutorials](https://tutorials.cosmos.network)
+- [Discord](https://discord.gg/W8trcGV)
 
 
 
