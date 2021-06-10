@@ -1,4 +1,4 @@
-# redduct
+# ![redduct](./redduct.jpg)
 
 **redduct** is a blockchain built using Cosmos SDK and Tendermint and created with [Starport](https://github.com/tendermint/starport).
 
@@ -41,46 +41,50 @@ The frontend app is built using the `@starport/vue` and `@starport/vuex` package
 ## Usage
 
 ```
-git clone github.com/sap200/redduct
+$ git clone github.com/sap200/redduct
 ```
 
 ```
-go install
+$ go install
 ```
 
 ```
-redductd -h
-```
+$ redductd 
 
-```
-redduct transactions subcommands
+Stargate CosmosHub App
 
 Usage:
-  redductd tx redduct [flags]
-  redductd tx redduct [command]
+  redductd [command]
 
 Available Commands:
-  create-cartitem Create a new cartitem
-  create-order    Create a new order
-  create-product  Create a new product
-  delete-cartitem Delete a cartitem by id
-  delete-order    Delete a order by id
-  delete-product  Delete a product by id
-  update-cartitem Update a cartitem
-  update-order    Update a order
-  update-product  Update a product
+              
+              
+  add-genesis-account Add a genesis account to genesis.json
+  collect-gentxs      Collect genesis txs and output a genesis.json file
+  debug               Tool for helping with debugging your application
+  export              Export state to JSON
+  gentx               Generate a genesis tx carrying a self delegation
+  help                Help about any command
+  init                Initialize private validator, p2p, genesis, and application configuration files
+  keys                Manage your application's keys
+  migrate             Migrate genesis to a specified target version
+  query               Querying subcommands
+  start               Run the full node
+  status              Query remote node for status
+  tendermint          Tendermint subcommands
+  tx                  Transactions subcommands
+  unsafe-reset-all    Resets the blockchain database, removes address book files, and resets data/priv_validator_state.json to the genesis state
+  validate-genesis    validates the genesis file at the default location or at the location passed as an arg
+  version             Print the application binary version information
 
 Flags:
-  -h, --help   help for redduct
-
-Global Flags:
-      --chain-id string     The network chain ID (default "redduct")
+  -h, --help                help for redductd
       --home string         directory for config and data (default "/home/saptarsi/.redduct")
       --log_format string   The logging format (json|plain) (default "plain")
       --log_level string    The logging level (trace|debug|info|warn|error|fatal|panic) (default "info")
       --trace               print out full stack trace on errors
 
-Use "redductd tx redduct [command] --help" for more information about a command.
+Use "redductd [command] --help" for more information about a command.
 ```
 
 ### Types
@@ -125,6 +129,26 @@ type MsgCreateCartitem struct {
 	Quantity    int32  `protobuf:"varint,5,opt,name=quantity,proto3" json:"quantity,omitempty"`
 }
 ```
+
+Create Product
+
+```
+$ redductd tx redduct create-product -h
+```
+
+Create cart item
+
+```
+$ redductd tx redduct create-cartitem -h
+```
+
+create order
+
+```
+redductd tx redduct create-order -h
+```
+
+Try to make a decentralized ecommerce app as made in vue using the protocol...
 
 
 
