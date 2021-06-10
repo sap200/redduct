@@ -1,0 +1,12 @@
+syntax = "proto3";
+package sap200.redduct.redduct;
+
+// this line is used by starport scaffolding # genesis/proto/import
+
+option go_package = "github.com/sap200/redduct/x/redduct/types";
+
+// GenesisState defines the redduct module's genesis state.
+message GenesisState {
+    // this line is used by starport scaffolding # genesis/proto/state
+    // this line is used by starport scaffolding # ibc/genesis/proto
+}
