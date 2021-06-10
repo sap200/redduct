@@ -1,4 +1,8 @@
+# Redduct
 # ![redduct](./redduct.png)
+
+[try it out](https://cocky-northcutt-489800.netlify.app/).
+
 
 **redduct** is a blockchain built using Cosmos SDK and Tendermint and created with [Starport](https://github.com/tendermint/starport).
 
