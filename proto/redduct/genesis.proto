@@ -2,11 +2,20 @@ syntax = "proto3";
 package sap200.redduct.redduct;
 
 // this line is used by starport scaffolding # genesis/proto/import
+import "redduct/order.proto";
+import "redduct/cartitem.proto";
+import "redduct/product.proto";
 
 option go_package = "github.com/sap200/redduct/x/redduct/types";
 
 // GenesisState defines the redduct module's genesis state.
 message GenesisState {
     // this line is used by starport scaffolding # genesis/proto/state
+		repeated Order orderList = 5; // this line is used by starport scaffolding # genesis/proto/stateField
+		uint64 orderCount = 6; // this line is used by starport scaffolding # genesis/proto/stateField
+		repeated Cartitem cartitemList = 3; // this line is used by starport scaffolding # genesis/proto/stateField
+		uint64 cartitemCount = 4; // this line is used by starport scaffolding # genesis/proto/stateField
+		repeated Product productList = 1; // this line is used by starport scaffolding # genesis/proto/stateField
+		uint64 productCount = 2; // this line is used by starport scaffolding # genesis/proto/stateField
     // this line is used by starport scaffolding # ibc/genesis/proto
 }

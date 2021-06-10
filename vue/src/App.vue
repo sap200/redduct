@@ -1,5 +1,6 @@
 <template>
 	<div v-if="initialized">
+		<RedductLogo />
 		<SpWallet ref="wallet" v-on:dropdown-opened="$refs.menu.closeDropdown()" />
 		<SpLayout>
 			<template v-slot:sidebar>
@@ -22,10 +23,12 @@ body {
 import './scss/app.scss'
 import '@starport/vue/lib/starport-vue.css'
 import Sidebar from './components/Sidebar'
+import RedductLogo from './components/utils/RedductLogo.vue'
 
 export default {
 	components: {
-		Sidebar
+		Sidebar,
+		RedductLogo
 	},
 	data() {
 		return {

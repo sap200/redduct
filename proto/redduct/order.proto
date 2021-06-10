@@ -1,0 +1,18 @@
+syntax = "proto3";
+package sap200.redduct.redduct;
+
+option go_package = "github.com/sap200/redduct/x/redduct/types";
+
+import "gogoproto/gogo.proto";
+
+message Order {
+  string creator = 1;
+  uint64 id = 2;
+  string producthash = 3; 
+  string seller = 4; 
+  string deliveryaddress = 5; 
+  int32 quantity = 6; 
+  int32 status = 7; 
+  int32 paid = 8; 
+  int32 totalamount = 9; 
+}

@@ -329,6 +329,7 @@ func New(
 		appCodec,
 		keys[redducttypes.StoreKey],
 		keys[redducttypes.MemStoreKey],
+		app.BankKeeper,
 	)
 	redductModule := redduct.NewAppModule(appCodec, app.RedductKeeper)
 

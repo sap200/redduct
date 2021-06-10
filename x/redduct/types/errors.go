@@ -10,4 +10,5 @@ import (
 var (
 	ErrSample = sdkerrors.Register(ModuleName, 1100, "sample error")
 	// this line is used by starport scaffolding # ibc/errors
+	ErrIpfsAdd = sdkerrors.Register(ModuleName, 5500, "Ipfs Add Error")
 )

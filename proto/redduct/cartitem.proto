@@ -1,0 +1,15 @@
+syntax = "proto3";
+package sap200.redduct.redduct;
+
+option go_package = "github.com/sap200/redduct/x/redduct/types";
+
+import "gogoproto/gogo.proto";
+
+message Cartitem {
+  string creator = 1;
+  uint64 id = 2;
+  string producthash = 3; 
+  string seller = 4; 
+  int32 price = 5; 
+  int32 quantity = 6; 
+}

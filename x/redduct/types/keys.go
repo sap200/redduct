@@ -24,3 +24,18 @@ const (
 func KeyPrefix(p string) []byte {
 	return []byte(p)
 }
+
+const (
+	ProductKey      = "Product-value-"
+	ProductCountKey = "Product-count-"
+)
+
+const (
+	CartitemKey      = "Cartitem-value-"
+	CartitemCountKey = "Cartitem-count-"
+)
+
+const (
+	OrderKey      = "Order-value-"
+	OrderCountKey = "Order-count-"
+)

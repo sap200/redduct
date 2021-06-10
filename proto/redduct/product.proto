@@ -1,0 +1,13 @@
+syntax = "proto3";
+package sap200.redduct.redduct;
+
+option go_package = "github.com/sap200/redduct/x/redduct/types";
+
+import "gogoproto/gogo.proto";
+
+message Product {
+  string creator = 1;
+  uint64 id = 2;
+  string ipfshash = 3; 
+  int32 quantity = 4; 
+}

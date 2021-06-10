@@ -4,12 +4,96 @@ package sap200.redduct.redduct;
 import "google/api/annotations.proto";
 import "cosmos/base/query/v1beta1/pagination.proto";
 // this line is used by starport scaffolding # 1
+import "redduct/order.proto";
+import "redduct/cartitem.proto";
+import "redduct/product.proto";
 
 option go_package = "github.com/sap200/redduct/x/redduct/types";
 
 // Query defines the gRPC querier service.
 service Query {
     // this line is used by starport scaffolding # 2
+
+	// Queries a order by id.
+	rpc Order(QueryGetOrderRequest) returns (QueryGetOrderResponse) {
+		option (google.api.http).get = "/sap200/redduct/redduct/order/{id}";
+	}
+
+	// Queries a list of order items.
+	rpc OrderAll(QueryAllOrderRequest) returns (QueryAllOrderResponse) {
+		option (google.api.http).get = "/sap200/redduct/redduct/order";
+	}
+
+
+	// Queries a cartitem by id.
+	rpc Cartitem(QueryGetCartitemRequest) returns (QueryGetCartitemResponse) {
+		option (google.api.http).get = "/sap200/redduct/redduct/cartitem/{id}";
+	}
+
+	// Queries a list of cartitem items.
+	rpc CartitemAll(QueryAllCartitemRequest) returns (QueryAllCartitemResponse) {
+		option (google.api.http).get = "/sap200/redduct/redduct/cartitem";
+	}
+
+
+	// Queries a product by id.
+	rpc Product(QueryGetProductRequest) returns (QueryGetProductResponse) {
+		option (google.api.http).get = "/sap200/redduct/redduct/product/{id}";
+	}
+
+	// Queries a list of product items.
+	rpc ProductAll(QueryAllProductRequest) returns (QueryAllProductResponse) {
+		option (google.api.http).get = "/sap200/redduct/redduct/product";
+	}
+
 }
 
 // this line is used by starport scaffolding # 3
+message QueryGetOrderRequest {
+	uint64 id = 1;
+}
+
+message QueryGetOrderResponse {
+	Order Order = 1;
+}
+
+message QueryAllOrderRequest {
+	cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllOrderResponse {
+	repeated Order Order = 1;
+	cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+message QueryGetCartitemRequest {
+	uint64 id = 1;
+}
+
+message QueryGetCartitemResponse {
+	Cartitem Cartitem = 1;
+}
+
+message QueryAllCartitemRequest {
+	cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllCartitemResponse {
+	repeated Cartitem Cartitem = 1;
+	cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+message QueryGetProductRequest {
+	uint64 id = 1;
+}
+
+message QueryGetProductResponse {
+	Product Product = 1;
+}
+
+message QueryAllProductRequest {
+	cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllProductResponse {
+	repeated Product Product = 1;
+	cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}

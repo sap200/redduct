@@ -2,12 +2,115 @@ syntax = "proto3";
 package sap200.redduct.redduct;
 
 // this line is used by starport scaffolding # proto/tx/import
+import "redduct/order.proto";
+import "redduct/cartitem.proto";
+import "redduct/product.proto";
 
 option go_package = "github.com/sap200/redduct/x/redduct/types";
 
 // Msg defines the Msg service.
 service Msg {
     // this line is used by starport scaffolding # proto/tx/rpc
+  rpc CreateOrder(MsgCreateOrder) returns (MsgCreateOrderResponse);
+  rpc UpdateOrder(MsgUpdateOrder) returns (MsgUpdateOrderResponse);
+  rpc DeleteOrder(MsgDeleteOrder) returns (MsgDeleteOrderResponse);
+  rpc CreateCartitem(MsgCreateCartitem) returns (MsgCreateCartitemResponse);
+  rpc UpdateCartitem(MsgUpdateCartitem) returns (MsgUpdateCartitemResponse);
+  rpc DeleteCartitem(MsgDeleteCartitem) returns (MsgDeleteCartitemResponse);
+  rpc CreateProduct(MsgCreateProduct) returns (MsgCreateProductResponse);
+  rpc UpdateProduct(MsgUpdateProduct) returns (MsgUpdateProductResponse);
+  rpc DeleteProduct(MsgDeleteProduct) returns (MsgDeleteProductResponse);
 }
 
 // this line is used by starport scaffolding # proto/tx/message
+message MsgCreateOrder {
+  string creator = 1;
+  string producthash = 2;
+  string seller = 3;
+  string deliveryaddress = 4;
+  int32 quantity = 5;
+  int32 status = 6;
+  int32 paid = 7;
+  int32 totalamount = 8;
+}
+
+message MsgCreateOrderResponse {
+  uint64 id = 1;
+}
+
+message MsgUpdateOrder {
+  string creator = 1;
+  uint64 id = 2;
+  string producthash = 3;
+  string seller = 4;
+  string deliveryaddress = 5;
+  int32 quantity = 6;
+  int32 status = 7;
+  int32 paid = 8;
+  int32 totalamount = 9;
+}
+
+message MsgUpdateOrderResponse { }
+
+message MsgDeleteOrder {
+  string creator = 1;
+  uint64 id = 2;
+}
+
+message MsgDeleteOrderResponse { }
+
+message MsgCreateCartitem {
+  string creator = 1;
+  string producthash = 2;
+  string seller = 3;
+  int32 price = 4;
+  int32 quantity = 5;
+}
+
+message MsgCreateCartitemResponse {
+  uint64 id = 1;
+}
+
+message MsgUpdateCartitem {
+  string creator = 1;
+  uint64 id = 2;
+  string producthash = 3;
+  string seller = 4;
+  int32 price = 5;
+  int32 quantity = 6;
+}
+
+message MsgUpdateCartitemResponse { }
+
+message MsgDeleteCartitem {
+  string creator = 1;
+  uint64 id = 2;
+}
+
+message MsgDeleteCartitemResponse { }
+
+message MsgCreateProduct {
+  string creator = 1;
+  string ipfshash = 2;
+  int32 quantity = 3;
+}
+
+message MsgCreateProductResponse {
+  uint64 id = 1;
+}
+
+message MsgUpdateProduct {
+  string creator = 1;
+  uint64 id = 2;
+  string ipfshash = 3;
+  int32 quantity = 4;
+}
+
+message MsgUpdateProductResponse { }
+
+message MsgDeleteProduct {
+  string creator = 1;
+  uint64 id = 2;
+}
+
+message MsgDeleteProductResponse { }
