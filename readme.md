@@ -42,7 +42,7 @@ $ git clone github.com/sap200/redduct
 ```
 
 ```
-$ go install
+$ cd redduct && go install
 ```
 
 ```
